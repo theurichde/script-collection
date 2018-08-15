@@ -1,0 +1,8 @@
+export HYBRIS_LOG_DIR="/opt/hybris/hybris/log"
+export HYBRIS_ROOT_DIR="/opt/hybris/hybris"
+export HYBRIS_CONFIG_DIR="/opt/hybris/hybris/config"
+
+alias viewHybrisLog="less $HYBRIS_LOG_DIR/hybris.log"
+alias vimLocalProperties="vim $HYBRIS_CONFIG_DIR/local.properties"
+alias ll="ls -lah"
+alias eci-deploy="sudo -i -u eci-deploy"
