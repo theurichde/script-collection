@@ -1,0 +1,34 @@
+#!/bin/bash
+
+SCRIPT_FOLDER="~/projects/script-collection"
+
+alias gits="git shorty"
+alias gau="git add --update"
+alias gdiff="git diff"
+
+alias zshconfig="vim ~/.zshrc"
+alias zsh_aliasconfig="vim ~/.zsh_aliases && source ~/.zsh_aliases"
+
+hybrisLog="$HYBRIS_LOG_DIR/hybris.log"
+
+alias cdhp="cd ~/projects/hybris/eci-hybris/hybris/bin/platform"
+alias aca="cdhp; ant clean all"
+alias aa="cdhp; ant all"
+alias integrationTest="${SCRIPT_FOLDER}/ant_integrationTest.sh"
+alias startHybrisServer="${SCRIPT_FOLDER}/startHybrisServer.sh"
+
+alias tux="${SCRIPT_FOLDER}/sshIntoTux.sh"
+alias QA_APP1="tux 462"
+alias QA_APP2="tux 463"
+alias QA_APP3="tux 468"
+
+alias TEST_APP1="tux 454"
+alias TEST_APP2="tux 455"
+alias TEST_APP3="tux 444"
+
+alias eciDesktop="setsid /opt/Citrix/ICAClient/wfica ${1} 2&>/dev/null"
+
+function gpushu() {git push -u origin $(git_current_branch);}
+
+export MVN_FAILSAFE_DEBUG='-Dmaven.failsafe.debug=\"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8001 -Xnoagent -Djava.compiler=NONE\"'
+export MVN_CARGO_DEBUG="-Dcargo.start.jvmargs=\"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -Xnoagent -Djava.compiler=NONE\"" 
